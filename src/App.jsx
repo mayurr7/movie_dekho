@@ -1,19 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Movie from "./pages/Movie";
+import AppLayout from "./component/layout/AppLayout";
+import About from "./pages/About";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "movie",
+          element: <Movie />,
+        },
+        {
+          path: "contact",
+          element: <Movie />,
+        },
+      ],
+    },
+  ]);
 
-  return (
-    <>
-      <div className='flex flex-col items-center justify-center min-h-screen bg-gray-800'>
-        <h1>New App</h1>
-      </div>
-
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
