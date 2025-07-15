@@ -5,12 +5,14 @@ import Home from "./pages/Home";
 import Movie from "./pages/Movie";
 import AppLayout from "./component/layout/AppLayout";
 import About from "./pages/About";
+import ErrorPage from "./component/ErrorPage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <AppLayout />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: "/",

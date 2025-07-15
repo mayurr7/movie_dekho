@@ -16,10 +16,10 @@ const Header = () => {
 
         <div className="pages-container flex items-center space-x-6">
           <nav className="flex space-x-6 items-center text-lg">
-            <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
-            <NavLink to="/about" className={({ isActive }) => isActive ? "active-link" : ""}>About</NavLink>
-            <NavLink to="/movie" className={({ isActive }) => isActive ? "active-link" : ""}>Movie</NavLink>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""}>Contact</NavLink>
+            <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-500 underline" : "text-white"}>Home</NavLink>
+            <NavLink to="/about" className={({ isActive }) => isActive ? "text-blue-500 underline" : "text-white"}>About</NavLink>
+            <NavLink to="/movie" className={({ isActive }) => isActive ? "text-blue-500 underline" : "text-white"}>Movie</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? "text-blue-500 underline" : "text-white"}>Contact</NavLink>
 
             <div className="search-bar ml-4">
               <input
