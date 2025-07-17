@@ -1,12 +1,18 @@
 import React from 'react'
+import { useLoaderData } from 'react-router-dom';
+import MovieCard from '../component/UI/MovieCard';
 
 const Movie = () => {
+  const movieData = useLoaderData();
+
+  console.log(movieData);
+  
   return (
-    <div className='movie-page flex flex-col items-center justify-center h-screen'>
-      <h1>Movie Page</h1>
-      <p>Details about the movie will be displayed here.</p>
-      {/* You can add more components or details about the movie here */}
-    </div>
+    <ul className='movie-page flex flex-row flex-wrap gap-25 justify-center p-10'>
+      {movieData.Search.map((currMovie) => {
+        return <MovieCard key ={currMovie.imdbID} currMovie = {currMovie}/>
+      })}
+    </ul>
   )
 }
 
