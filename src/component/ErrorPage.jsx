@@ -1,9 +1,15 @@
 import React from 'react';
-import { useRouteError, Link } from 'react-router-dom';
+import { useRouteError, Link, useNavigate } from 'react-router-dom';
 
 const ErrorPage = () => {
   const error = useRouteError();
 //   console.error(error);
+
+const navigate = useNavigate();
+
+const handleBack = () => {
+  navigate(-1);
+}
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white p-6">
@@ -14,12 +20,14 @@ const ErrorPage = () => {
           {error.statusText || error.message || "The page you're looking for doesn't exist or an error occurred."}
         </p>
 
-        <Link
+        {/* <Link
           to="/"
           className="inline-block bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition"
         >
           Go Back Home
-        </Link>
+        </Link> */}
+
+        <button className="inline-block bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition cursor-pointer" onClick={handleBack} >Back</button>
       </div>
     </div>
   );
