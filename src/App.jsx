@@ -9,6 +9,7 @@ import ErrorPage from "./component/ErrorPage";
 import getApidata from "./API/GetApiData";
 import MovieDetails from "./component/UI/MovieDetails";
 import getMovieData from "./API/GetMovieData";
+import Contact, { handleContactform } from "./pages/Contact";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,8 +37,9 @@ function App() {
           loader: getMovieData, // Fetch data for the Movie page
         },
         {
-          path: "contact",
-          element: <Movie />,
+          path: "/contact",
+          element: <Contact />,
+          action: handleContactform,
         },
       ],
     },
